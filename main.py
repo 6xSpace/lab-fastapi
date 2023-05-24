@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-class Item(BaseModel):
+class StudentCreateSchema(BaseModel):
     first_name: str
     last_name: str
 
@@ -14,5 +14,6 @@ async def root():
 
 
 @app.post("/student")
-async def create_item(item: Item):
+async def create_item(item: StudentCreateSchema):
     return item
+
